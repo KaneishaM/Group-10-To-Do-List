@@ -1,6 +1,6 @@
 td,
 th {
-  padding: 8px; /*spaces out the rows and columns a bit */
+  /*spaces out the rows and columns a bit */
   background-color: #eef2f7;
 }
 
@@ -8,33 +8,12 @@ th {
   color: white;
   background-color: #3d85c6;
 }
-tr {
-  text-align: center;
-}
 
 h2 {
   color: aliceblue;
   background-color: #3d85c6;
-  border-color: black;
-  border-radius: 5px;
-}
-.delete {
-  color: red;
-  border-width: 0;
 }
 
-#submit {
-  background-color: #3d85c6;
-  color: white;
-  padding: 10px 40px;
-  margin: 10px;
-}
-#submit:hover {
-  /*changes submit button color when mouse hovers over it */
-  background-color: #8f4266;
-}
 .container {
   border-radius: 10px;
-  padding: 10px;
-  background-color: #90d4c1;
 }
