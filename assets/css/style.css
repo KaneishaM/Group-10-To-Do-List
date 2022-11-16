@@ -1,0 +1,19 @@
+td,
+th {
+  /*spaces out the rows and columns a bit */
+  background-color: #eef2f7;
+}
+
+th {
+  color: white;
+  background-color: #3d85c6;
+}
+
+h2 {
+  color: aliceblue;
+  background-color: #3d85c6;
+}
+
+.container {
+  border-radius: 10px;
+}
