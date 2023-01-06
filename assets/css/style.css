@@ -17,3 +17,9 @@ h2 {
 .container {
   border-radius: 10px;
 }
+
+
+/* used to remove the markers/bullets */
+ul{ 
+list-style-type: none;
+}
