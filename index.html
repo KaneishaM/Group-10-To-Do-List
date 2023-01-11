@@ -7,103 +7,35 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          crossorigin="anonymous"
-          />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" crossorigin="anonymous"/> -->
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div id="main" class="card">
-            <div class="card-content">
-              <span class="card-title">
-                <h5>New Task
-                </h5>
-              </span>
-              <div class="row">
-                <form id="task-form">
-                  <div class="input-field col-12">
-                    <input type="text" name="task"  id="newTaskName" placeholder="New Task">
-                  </div> 
-                  <div class="calendar">
-                    <label for="calendar" class="form-label" id='calendar'>Select a Due Date 
-                    </label>
-                    <input type="date" id="date">
-                  </div>
-                  <div class="form-row justify-content-center">
-                    <div class="form-row">
-                      <label for="AssignedTo">Assigned To:
-                      </label>
-                      <input type="inputName" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                    <div class="">
-                      <label for="Description" class="form-label">Task Description:
-                      </label>
-                      <textarea class="form-control" id="description" rows="1" placeholder="Description">
-                      </textarea>
-                    </div>
-                    <input type="submit" class="btn btn-primary" id="submit" value="add task">  
-                    </form>
-                  </div>
-              </div>
-              <div class="card-action">
-                <h5 id="task-title">Tasks
-                </h5>
-                <div class="input-field col-12">
-                  <input type="text" name="filter" id="task" placeholder="Filter Task">
-                </div> 
-                <ul>
-                  <li>DYNAMICALLY CREATED TASK LIST GO HERE
-                  </li>
-                  <li>
-                    <div class="card" style="width: 18rem;">
-                      <div class="card-body">
-                        <div class="card-title">
-                          <form>
-                            <div class="form-row" id="dynamicList">
-                              <div class="col">
-                                <input type="text" class="form-control" placeholder="Task" id="taskItem">
-                              </div>
-                              <div class="col">
-                                <input type="text" class="form-control" placeholder="Name" id="assignedName">
-                              </div>
-                              <div class="col">
-                                <input type="text" class="card-text form-control" placeholder="Task Description" id="taskDescription">
-                              </div>
-                              <div class="col">
-                                <input placeholder="Select date" type="calendar" id="dateItem" class="calendar form-control">
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                        <!-- Task List-->
-                        <div class="row"> 
-                          <div class ="col">
-                            <button type="button" class="btn btn-primary" id="check">
-                              <img src="./assets/images/check-square.svg" class="check">
-                            </button> 
-                            <button type="button" class="btn btn-danger" id ="trash">
-                              <img src="/assets/images/trash.svg" >
-                            </button>
-                          </div>
-                        </div>               
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              
-                <a href="#" class="btn btn-warning" id="clearBtn">Clear Tasks
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <input type="text" placeholder="Enter new to-do">
+    <p><input type="text" placeholder="Enter Category"
+      list="categoryList"></p>
+    <datalist id = "categoryList">
+      <option value="Personal"></option>
+      <option value="Work"></option>
+    </datalist>
+    <button id="addBtn">Add</button>
+    <ul></ul>
+    <table id="todoTable">
+      <tr>
+        <td>checkbox</td>
+        <td>to-do</td>
+        <td><select id="categoryFilter">
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+        </select></td>
+        <td>delete</td>
+      </tr>
+    </table>
+
     <script src="./assets/js/script.js">
-    </script>   
-  </body>  
+    </script>
+
+  </body>
 </html>
