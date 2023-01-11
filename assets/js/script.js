@@ -35,7 +35,7 @@ posts.innerHTML +=
 `          <div>
 <p>${data.text}</p>
 <span class="options">
-<i class="fa-solid fa-pen-to-square"></i>
+<i onClick = "editPost(this)" class="fa-solid fa-pen-to-square"></i>
 <i onClick= "deletePost(this)" class="fa-solid fa-trash-can"></i>
 </span>
 </div>`
@@ -47,6 +47,12 @@ let deletePost = (e) => {
   e.parentElement.parentElement.remove()
 }
 
+let editPost = (e) => {
+  input.value = e.parentElement.previousElementSibling.innerHTML;
+  e.parentElement.parentElement.remove()
+
+
+}
 
 
 

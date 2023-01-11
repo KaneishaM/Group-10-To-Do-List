@@ -13,40 +13,36 @@
           rel="stylesheet" crossorigin="anonymous"/> -->
   </head>
   <body>
+    <div class="app">
+      <h4>Todo App</h4>
+      <div id="addNew">
+    <span>Add New Task</span>
+    <i class="fa-solid fa-plus"></i>
+  </div>
+  <h5>Tasks</h5>
 
-    <h1>Social media app</h1>
-    <div class="container">
-      <div class="left"></div>
-      <form id="form">
-      <label for="">Write your post here</label>
-      <br><br>
-      <textarea name="" id="input" cols="30" rows="10"></textarea>
-      <br><br>
-      <div id="msg"></div>
-      <button type="submit">post</button>
-    </form>
-      <div class="right">
-        <h3>Your Posts here</h3>
-        <div id="posts">
-          <div>
-            <p>post 1</p>
-            <span class="options">
-              <i class="fa-solid fa-trash-can"></i>
-              <i class="fa-solid fa-pen-to-square"></i>
-            </span>
-          </div>
-          <div>
-            <p>post 2</p>
-            <span class="options">
-              <i class="fa-solid fa-trash-can"></i>
-              <i class="fa-solid fa-pen-to-square"></i>
-            </span>
-          </div>
-        </div>
 
-        </div>
-      </div>
-
+  <div id="tasks">
+    <div>
+      <span>Task 1</span>
+      <span>2022-1-20</span>
+      <p>going to gym to workout</p>
+      <span class="options">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <i class="fa-solid fa-trash-can"></i>
+      </span>
+    </div>
+    <div>
+      <span>Task 2</span>
+      <span>2022-1-20</span>
+      <p>going to office</p>
+      <span class="options">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <i class="fa-solid fa-trash-can"></i>
+      </span>
+    </div>
+  </div>
+  </div>
       <script src="./assets/js/script.js">
       </script>
       </body>

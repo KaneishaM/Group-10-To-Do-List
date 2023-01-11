@@ -1,102 +1,40 @@
 body{
   font-family: sans-serif;
-  margin:  0 50px;
+  background-color: #e5e5e5;
 }
 
-.container{
+
+.app{
+  width: 300px;
+  height: 500px;
+  border: 5px solid #abcea1;
+  border-radius: 8px ;
+  padding: 15px;
+  background-color: #fff;
+}
+
+#addNew{
   display: flex;
-  gap: 50px;
-
-}
-
-#posts{
-  width:400px;
-}
-
-#posts div{
-  display: flex;
+  background-color:rgba(171,206,161,0.35);
   align-items: center;
   justify-content: space-between;
-}
-
-.options{
-  display: flex;
-  gap: 25px;
-}
-
-
-i{
+  padding: 5px 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#msg{
-  color:red ;
+.fa-plus{
+  background-color: #abcea1;
+  padding: 3px;
+  border-radius: 3px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .strike{
-  text-decoration: line-through;
-}
-
-td{
-  border: 1px solid black;
+#tasks div{
+  background-color: #e2eede;
+  border: 3px solid #abcea1;
   padding: 5px;
+  border-radius: 6px;
+  display: grid;
+  gap: 4px;
+
 }
- */
