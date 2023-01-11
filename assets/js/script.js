@@ -35,15 +35,17 @@ posts.innerHTML +=
 `          <div>
 <p>${data.text}</p>
 <span class="options">
-  <i class="fa-solid fa-trash-can"></i>
-  <i class="fa-solid fa-pen-to-square"></i>
+<i class="fa-solid fa-pen-to-square"></i>
+<i onClick= "deletePost(this)" class="fa-solid fa-trash-can"></i>
 </span>
 </div>`
-
 ;
+input.value = "";
 }
 
-
+let deletePost = (e) => {
+  e.parentElement.parentElement.remove()
+}
 
 
 
