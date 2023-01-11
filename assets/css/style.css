@@ -1,3 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F7E7CE;
+  text-align: center;
+}
+
+.container {
+  margin-top: 8%;
+}
+
+.card-content {
+  background-color: lightgrey;
+}
+
 td,
 th {
   /*spaces out the rows and columns a bit */
@@ -22,4 +40,12 @@ h2 {
 /* used to remove the markers/bullets */
 ul{ 
 list-style-type: none;
+}
+
+
+/* Styling delete and complete buttons */
+
+.check-button-background {
+  background-color: lightgreen;
+  color: black;
 }
