@@ -106,20 +106,69 @@ function todoMain() {
     }
   }
 
-    function filterEntries(){
+  // function filterEntries(){
+
+  //   let rows = document.getElementsByTagName("tr");
+
+  //   for(let i = 0; i < rows.length; i++) {
+
+  //     let category = rows[i].getElementsByTagName("td")[2].innerText;
+  //     if(category == selectElem.value) {
+  //       row.style.display = "";
+  //     } else {
+  //       row.style.display = "none"
+  //     }
+  //   }
+  // }
+
+  // //  function filterEntries(){
+
+  // //   let rows = document.getElementsByTagName("tr");
+
+  // //   Array.from(rows).forEach((row , index) =>{
+  // //     if(index==0){
+  // //       return;
+  // //     }
+
+  // //     let category = row.getElementsByTagName("td")[2].innerText;
+  // //     if(category == selectElem.value){
+  // //       row.style.display = "";
+  // //     } else {
+  // //       row.style.display = "none";
+  // //     }
+  // //   })
+  // //  }
+
+  function filterEntries() {
+
+    let selection = selectElem.value;
+
+    if (selection == "") {
 
       let rows = document.getElementsByTagName("tr");
 
-      for (let i = 1; i < rows.length; i++) {
+      Array.from(rows).forEach((row, index) => {
+        row.style.display = "";
+      });
 
-        let category = rows[i].getElementsByTagName("td")[2].innerText;
-        if(category == selectElem.value){
-          rows[i].style.display = "";
-        } else {
-          rows[i].style.display = "none";
+    } else {
+      let rows = document.getElementsByTagName("tr");
+
+      Array.from(rows).forEach((row, index) => {
+        if (index == 0) {
+          return;
         }
 
-      }
-
+        let category = row.getElementsByTagName("td")[2].innerText;
+        if (category == selectElem.value) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
     }
+
+
+  }
+
 }
