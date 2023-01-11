@@ -1,6 +1,7 @@
 let form = document.getElementById("form");
 let input = document.getElementById("input");
 let msg = document.getElementById("msg");
+let posts = document.getElementById("posts");
 form.addEventListener("submit" , (e) =>{
   e.preventDefault();
   console.log("buton clicked!")
@@ -10,7 +11,7 @@ form.addEventListener("submit" , (e) =>{
 let formValidation = () => {
   if(input.value === "") {
     msg.innerHTML = "Post cant be blank!";
-    console.log('failure');
+    console.log("failure");
   } else{
     console.log("success");
     msg.innerHTML = "";
@@ -24,8 +25,23 @@ let data = {};
 let acceptData = () => {
   data["text"] = input.value;
   console.log(data);
+  createPost();
+
 }; //use this function to push into data variable
 
+
+let createPost = () => {
+posts.innerHTML +=
+`          <div>
+<p>${data.text}</p>
+<span class="options">
+  <i class="fa-solid fa-trash-can"></i>
+  <i class="fa-solid fa-pen-to-square"></i>
+</span>
+</div>`
+
+;
+}
 
 
 
