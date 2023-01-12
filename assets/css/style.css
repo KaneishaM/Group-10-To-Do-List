@@ -1,45 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
+
+.app{
+  width: 300px;
+  height: 500px;
+  border: 5px solid #abcea1;
+  border-radius: 8px ;
+  padding: 15px;
+  background-color: #fff;
 }
 
-body {
-  background-color: #F7E7CE;
-  text-align: center;
+#addNew{
+  display: flex;
+  background-color:rgba(171,206,161,0.35);
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.container {
-  margin-top: 8%;
+.fa-plus{
+  background-color: #abcea1;
+  padding: 3px;
+  border-radius: 3px;
 }
 
-.card-content {
-  background-color: lightgrey;
-}
+#tasks div{
+  background-color: #e2eede;
+  border: 3px solid #abcea1;
+  padding: 5px;
+  border-radius: 6px;
+  display: grid;
+  gap: 4px;
 
-td,
-th {
-  /*spaces out the rows and columns a bit */
-  background-color: #eef2f7;
-}
-
-th {
-  color: white;
-  background-color: #3d85c6;
-}
-
-h2 {
-  color: aliceblue;
-  background-color: #3d85c6;
-}
-
-.container {
-  border-radius: 10px;
 }
 
 
-/* used to remove the markers/bullets */
-ul{ 
-list-style-type: none;
+.options{
+  justify-self: center;
+  display: flex;
+  gap: 20px;
+}
+
+
+.options i {
+  cursor: pointer;
+
 }
 
 
