@@ -1,65 +1,8 @@
-let form = document.getElementById("form");
-let input = document.getElementById("input");
-let msg = document.getElementById("msg");
-let posts = document.getElementById("posts");
-form.addEventListener("submit" , (e) =>{
-  e.preventDefault();
-  console.log("buton clicked!")
-  formValidation();
-});
 
-let formValidation = () => {
-  if(input.value === "") {
-    msg.innerHTML = "Post cant be blank!";
-    console.log("failure");
-  } else{
-    console.log("success");
-    msg.innerHTML = "";
-    acceptData();
-  }
-};
-
-
-let data = {};
-
-let acceptData = () => {
-  data["text"] = input.value;
-  console.log(data);
-  createPost();
-
-}; //use this function to push into data variable
-
-
-let createPost = () => {
-posts.innerHTML +=
-`          <div>
-<p>${data.text}</p>
-<span class="options">
-<i onClick = "editPost(this)" class="fa-solid fa-pen-to-square"></i>
-<i onClick= "deletePost(this)" class="fa-solid fa-trash-can"></i>
-</span>
-</div>`
-;
-input.value = "";
-}
-
-let deletePost = (e) => {
-  e.parentElement.parentElement.remove()
-}
-
-let editPost = (e) => {
-  input.value = e.parentElement.previousElementSibling.innerHTML;
-  e.parentElement.parentElement.remove()
-
-
-}
-
-
-
-
-
-
-
+// build button of submit event listener
+// form validation so that either submission is a success or failure
+// if success(form not empty) create functions
+// if failure error message will be thrown
 
 
 
