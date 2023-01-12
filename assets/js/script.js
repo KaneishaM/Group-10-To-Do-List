@@ -4,6 +4,12 @@
 // if success(form not empty) create functions
 // if failure error message will be thrown
 
+let form = document.getElementById("form");
+
+form.addEventListener("submit" , (e) => {
+
+  e.preventDefault();
+})
 
 
 
