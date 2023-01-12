@@ -1,8 +1,3 @@
-body{
-  font-family: sans-serif;
-  background-color: #e5e5e5;
-}
-
 
 .app{
   width: 300px;
@@ -50,4 +45,12 @@ body{
 .options i {
   cursor: pointer;
 
+}
+
+
+/* Styling delete and complete buttons */
+
+.check-button-background {
+  background-color: lightgreen;
+  color: black;
 }
