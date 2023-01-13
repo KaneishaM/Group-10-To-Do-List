@@ -4,15 +4,29 @@
 // if success(form not empty) create functions
 // if failure error message will be thrown
 
-let form = document.getElementById("form");
+// let form = document.getElementById("form");
 
-form.addEventListener("submit" , (e) => {
+// form.addEventListener("submit" , (e) => {
 
-  e.preventDefault();
-})
+//   e.preventDefault();
+// })
+
+// const song_times_1 = [
+//   {title:"stairway to heaven" ,
+//     time: "8:05"}
+// ]
+
+// const spliter = song_times_1[1].split(':')
+// console.log(spliter)
 
 
-
+localStorage.setItem('storeMePlease' , 2);
+localStorage.getItem('storeMePlease');
+localStorage.removeItem('storeMePlease');
+localStorage.getItem('storeMePlease');
+localStorage.setItem('anotherThing' , 'you look nice today')
+localStorage.getItem('storeMePlease');
+localStorage.clear;
 
 
 
