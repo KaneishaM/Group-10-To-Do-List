@@ -26,7 +26,7 @@ localStorage.removeItem('storeMePlease');
 localStorage.getItem('storeMePlease');
 localStorage.setItem('anotherThing' , 'you look nice today')
 localStorage.getItem('storeMePlease');
-localStorage.clear;
+localStorage.clear;git cke
 
 
 
