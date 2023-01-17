@@ -4,29 +4,60 @@
 // if success(form not empty) create functions
 // if failure error message will be thrown
 
-// let form = document.getElementById("form");
+let form = document.getElementById("form");
+let textInput = document.getElementById("textInput");
+let dateInput = document.getElementById("dateInput");
+let textArea = document.getElementById("textArea");
+let msg = document.getElementById("msg");
 
-// form.addEventListener("submit" , (e) => {
 
-//   e.preventDefault();
-// })
+
+form.addEventListener("submit" , (e) => {
+
+
+  formValidation()
+  e.preventDefault();
+});
+
+
+let formValidation = () => {
+  if(textInput.value == "") {
+    console.log('failure');
+    msg.innerHTML = "task cant be blank";
+  } else {
+    console.log('success');
+    msg.innerHTML = "";
+    acceptData();
+  }
+};
+
+
+let data ={};
+
+let acceptData = () => {
+  data ["text"] = textInput.value;
+  data ["date"] = dateInput.value;
+  data ["description"] = textArea.value;
+  console.log(data);   
+};
+
+
+
+
+
+
+
 
 // const song_times_1 = [
 //   {title:"stairway to heaven" ,
-//     time: "8:05"}
+//     time: "8:05"},
+//   {title:"stairway heaven" ,
+//     time: "8:45"}
 // ]
 
-// const spliter = song_times_1[1].split(':')
-// console.log(spliter)
+// const splitter = song_times_1[0].time.split(':');
+// console.log(splitter);
 
-
-localStorage.setItem('storeMePlease' , 2);
-localStorage.getItem('storeMePlease');
-localStorage.removeItem('storeMePlease');
-localStorage.getItem('storeMePlease');
-localStorage.setItem('anotherThing' , 'you look nice today')
-localStorage.getItem('storeMePlease');
-localStorage.clear;git cke
 
 
 
