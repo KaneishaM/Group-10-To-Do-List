@@ -9,6 +9,7 @@ let textInput = document.getElementById("textInput");
 let dateInput = document.getElementById("dateInput");
 let textArea = document.getElementById("textArea");
 let msg = document.getElementById("msg");
+let tasks = document.getElementById("tasks");
 
 
 
@@ -38,9 +39,23 @@ let acceptData = () => {
   data ["text"] = textInput.value;
   data ["date"] = dateInput.value;
   data ["description"] = textArea.value;
-  console.log(data);   
+  createTasks();
+  console.log(data);
 };
 
+
+let createTasks = () => {
+  tasks.innerHTML += `<div>
+  <span class="fw-bold">${data.text}</span>
+  <span class="small text-secondary">${data.date}</span>
+  <p>${data.description}</p>
+  <span class="options">
+    <i class="fa-solid fa-pen-to-square"></i>
+    <i class="fa-solid fa-trash-can"></i>
+  </span>
+</div>`
+
+}
 
 
 
