@@ -5,11 +5,13 @@
 // if failure error message will be thrown
 
 let form = document.getElementById("form");
+let nameInput = document.getElementById("nameInput");
 let textInput = document.getElementById("textInput");
 let dateInput = document.getElementById("dateInput");
 let textArea = document.getElementById("textArea");
 let msg = document.getElementById("msg");
 let tasks = document.getElementById("tasks");
+let editBtn = document.getElementsByClassName('editBtn')
 
 
 
@@ -36,6 +38,7 @@ let formValidation = () => {
 let data ={};
 
 let acceptData = () => {
+  data ["name"] = nameInput.value;
   data ["text"] = textInput.value;
   data ["date"] = dateInput.value;
   data ["description"] = textArea.value;
@@ -46,12 +49,14 @@ let acceptData = () => {
 
 let createTasks = () => {
   tasks.innerHTML += `<div>
+  <span class="fw-bold small">${data.name}</span>
   <span class="fw-bold">${data.text}</span>
+
   <span class="small text-secondary">${data.date}</span>
   <p>${data.description}</p>
   <span class="options">
     <i class="fa-solid fa-pen-to-square"></i>
-    <i class="fa-solid fa-trash-can"></i>
+    <i onClick= "deleteTask(this)" class="fa-solid fa-trash-can"></i>
   </span>
 </div>`
 
@@ -59,6 +64,10 @@ let createTasks = () => {
 
 
 
+let deleteTask = (e) =>{
+  e.parentElement.parentElement.remove();
+  console.log('Task Removed!')
+}
 
 
 
