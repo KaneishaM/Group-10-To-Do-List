@@ -10,6 +10,7 @@ let dateInput = document.getElementById("dateInput");
 let textArea = document.getElementById("textArea");
 let msg = document.getElementById("msg");
 let tasks = document.getElementById("tasks");
+let add = document.getElementById("add");
 
 
 
@@ -29,6 +30,13 @@ let formValidation = () => {
     console.log('success');
     msg.innerHTML = "";
     acceptData();
+    add.setAttribute("data-bs-dismiss" , "modal");
+    add.click();
+
+    (()=>{
+      add.setAttribute("data-bs-dismiss" , "")
+    })()
+
   }
 };
 
@@ -45,7 +53,8 @@ let acceptData = () => {
 
 
 let createTasks = () => {
-  tasks.innerHTML += `<div>
+  tasks.innerHTML += `
+  <div>
   <span class="fw-bold">${data.text}</span>
   <span class="small text-secondary">${data.date}</span>
   <p>${data.description}</p>
@@ -53,8 +62,16 @@ let createTasks = () => {
     <i class="fa-solid fa-pen-to-square"></i>
     <i class="fa-solid fa-trash-can"></i>
   </span>
-</div>`
+</div>
+`;
 
+resetForm()
+};
+
+let resetForm = () =>{
+  textInput.value = "";
+  dateInput.value = "";
+  textArea.value =  "";
 }
 
 
