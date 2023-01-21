@@ -34,8 +34,8 @@ let formValidation = () => {
     add.click();
 
     (()=>{
-      add.setAttribute("data-bs-dismiss" , "")
-    })()
+      add.setAttribute("data-bs-dismiss" , "");
+    }) ();
 
   }
 };
@@ -60,7 +60,7 @@ let createTasks = () => {
   <p>${data.description}</p>
   <span class="options">
     <i class="fa-solid fa-pen-to-square"></i>
-    <i class="fa-solid fa-trash-can"></i>
+    <i onClick = "deleteTask(this)" class="fa-solid fa-trash-can"></i>
   </span>
 </div>
 `;
@@ -74,7 +74,10 @@ let resetForm = () =>{
   textArea.value =  "";
 }
 
+let deleteTask = (e) => {
+  e.parentElement.parentElement.remove();
 
+}
 
 
 
