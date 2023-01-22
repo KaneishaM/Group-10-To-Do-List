@@ -11,8 +11,7 @@ let dateInput = document.getElementById("dateInput");
 let textArea = document.getElementById("textArea");
 let msg = document.getElementById("msg");
 let tasks = document.getElementById("tasks");
-let editBtn = document.getElementsByClassName('editBtn')
-
+let editBtn = document.getElementById('editBtn')
 
 
 form.addEventListener("submit" , (e) => {
@@ -55,18 +54,29 @@ let createTasks = () => {
   <span class="small text-secondary">${data.date}</span>
   <p>${data.description}</p>
   <span class="options">
-    <i class="fa-solid fa-pen-to-square"></i>
+    <i onClick= "editTask(this)" class="fa-solid fa-pen-to-square" id = "editBtn" data-bs-toggle="modal" data-bs-target="#form" ></i>
     <i onClick= "deleteTask(this)" class="fa-solid fa-trash-can"></i>
   </span>
 </div>`
 
 }
+function editTask(e){
 
+
+  nameInput.value = e.parentElement.previousElementSibling.innerHTML
+  textInput.value = e.parentElement.previousElementSibling.innerHTML
+  dateInput.value =e.parentElement.previousElementSibling.innerHTML
+  textArea.value = e.parentElement.previousElementSibling.innerHTML
+
+  e.parentElement.parentElement.remove();
+  console.log('Task Updated')
+}
 
 let deleteTask = (e) =>{
   e.parentElement.parentElement.remove();
   console.log('Task Removed!')
 }
+
 
 
 
