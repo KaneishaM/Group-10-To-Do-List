@@ -63,7 +63,6 @@ let createTasks = () => {
 }
 
 
-
 let deleteTask = (e) =>{
   e.parentElement.parentElement.remove();
   console.log('Task Removed!')
