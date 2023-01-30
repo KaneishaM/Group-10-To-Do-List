@@ -26,7 +26,7 @@ body{
 
 #addNew{
   display: flex;
-  background-color:hsl(195, 53%, 79%); /* rgba(171,206,161,0.35); */
+  background-color:hsl(231, 94%, 55%); /* rgba; */
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;

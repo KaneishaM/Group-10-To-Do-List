@@ -59,17 +59,21 @@ let acceptData = () => {
 
 
 let createTasks = () => {
-  tasks.innerHTML += `
-  <div>
-  <span class="fw-bold">${data.text}</span>
-  <span class="small text-secondary">${data.date}</span>
-  <p>${data.description}</p>
-  <span class="options">
-    <i onClick = "editTask(this)"  data-bs-toggle="modal" data-bs-target="#form" class="fa-solid fa-pen-to-square"></i>
-    <i onClick = "deleteTask(this)" class="fa-solid fa-trash-can"></i>
-  </span>
-</div>
-`;
+  tasks.innerHTML = "";
+  data.map((x,y)=>{
+    return (tasks.innerHTML += `
+    <div id =${y}>
+    <span class="fw-bold">${x.text}</span>
+    <span class="small text-secondary">${x.date}</span>
+    <p>${x.description}</p>
+    <span class="options">
+      <i onClick = "editTask(this)"  data-bs-toggle="modal" data-bs-target="#form" class="fa-solid fa-pen-to-square"></i>
+      <i onClick = "deleteTask(this);createTasks()" class="fa-solid fa-trash-can"></i> 
+    </span>
+  </div>
+  `);
+  });
+
 
 resetForm()
 };
@@ -77,6 +81,9 @@ resetForm()
 
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
+  data.splice(e.parentElement.parentElement.id, 1);
+  localStorage.setItem("data" , JSON.stringify(data));
+  console.log(data);
 
 }
 
@@ -87,28 +94,25 @@ let editTask = (e) => {
   dateInput.value = selectedTask.children[1].innerHTML;
   textArea.value =  selectedTask.children[2].innerHTML;
 
-  selectedTask.remove();
+  deleteTask(e);
+
 }
 
 let resetForm = () =>{
   textInput.value = "";
   dateInput.value = "";
   textArea.value =  "";
-}
+};
 
 
 
 
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || []; //this line of code is trying to retireve data from the local storage and putting it back into the 'data' variable. || [] meaning or empty area takes away the error upon reload.
+  console.log(data);
+  createTasks();
+}) ();
 
-// const song_times_1 = [
-//   {title:"stairway to heaven" ,
-//     time: "8:05"},
-//   {title:"stairway heaven" ,
-//     time: "8:45"}
-// ]
-
-// const splitter = song_times_1[0].time.split(':');
-// console.log(splitter);
 
 
 
