@@ -1,8 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap'); /* imports google font for use*/
+
+
 body{
+  font-family: 'Comfortaa', cursive, sans-serif; /* */
   color: #454851;
-  font-family: 'Fira Sans', sans-serif ;
   background-color: #454851;
   height: 100vh;
   display: flex;
@@ -28,35 +30,54 @@ body{
   padding: 15px;
   background-color: #FCEFF9;
   overflow-y: scroll;
+  
 
 }
 
-.app::-webkit-scrollbar { width: 0 !important };
+.app::-webkit-scrollbar { width: 0 !important; }
+
+
+
+#span-text{
+  font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 10px;
+    max-width: fit-content;
+    align-content: center;
+    align-items: center;
+  
+}
 
 #addNew{
+  
   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
   color: #454851;
   background-color: #95D7AE; /* rgba; */
-  align-items: center;
-  justify-content: space-between;
   padding: 5px 10px;
   border-radius: 5px;
-  cursor: pointer;
-  
-  
+
 }
+  
+  
 .fa-plus:hover{
   background-color: #454851;
   color: #FCEFF9;
   transform: scale(1.1); 
+  cursor: pointer;
 
    
 }
 .fa-plus{
   background-color: #FCEFF9;
-  padding: 3px;
+  padding: .6em 0.5em;
   border-radius: 3px;
-  transition: all .2s ease-in-out; 
+  transition: all .2s ease-in-out;  /* for the growing effect animation */
+  line-height: initial;
 }
 
 #tasks div{
