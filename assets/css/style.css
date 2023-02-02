@@ -1,3 +1,4 @@
+feature-toDo
 
 *{
   font-family:monospace;
@@ -23,6 +24,8 @@ body{
   align-items: center;
 }
 
+
+ main
 
 .heading{
   font-weight: 300;
@@ -86,4 +89,12 @@ body{
 
 footer{
   align-items: flex-end;
+}
+
+
+/* Styling delete and complete buttons */
+
+.check-button-background {
+  background-color: lightgreen;
+  color: black;
 }
