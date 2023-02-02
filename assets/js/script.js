@@ -1,67 +1,117 @@
+
+// build button of submit event listener
+// form validation so that either submission is a success or failure
+// if success(form not empty) create functions
+// if failure error message will be thrown
+
 let form = document.getElementById("form");
-let input = document.getElementById("input");
+let textInput = document.getElementById("textInput");
+let dateInput = document.getElementById("dateInput");
+let textArea = document.getElementById("textArea");
 let msg = document.getElementById("msg");
-let posts = document.getElementById("posts");
-form.addEventListener("submit" , (e) =>{
+let tasks = document.getElementById("tasks");
+let add = document.getElementById("add");
+
+
+
+form.addEventListener("submit" , (e) => {
+
+
+  formValidation()
   e.preventDefault();
-  console.log("buton clicked!")
-  formValidation();
 });
 
+
 let formValidation = () => {
-  if(input.value === "") {
-    msg.innerHTML = "Post cant be blank!";
-    console.log("failure");
-  } else{
-    console.log("success");
+  if(textInput.value == "") {
+    console.log('failure');
+    msg.innerHTML = "task cant be blank";
+  } else {
+    console.log('success');
     msg.innerHTML = "";
     acceptData();
+    add.setAttribute("data-bs-dismiss" , "modal");
+    add.click();
+
+    (()=>{
+      add.setAttribute("data-bs-dismiss" , "");
+    }) ();
+
   }
 };
 
 
-let data = {};
+let data = [];
+
 
 let acceptData = () => {
-  data["text"] = input.value;
+  data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textArea.value,
+  });
+
+  localStorage.setItem("data" , JSON.stringify(data));
+
   console.log(data);
-  createPost();
+  createTasks();
+};
 
-}; //use this function to push into data variable
+
+let createTasks = () => {
+  tasks.innerHTML = "";
+  data.map((x,y)=>{
+    return (tasks.innerHTML += `
+    <div id =${y}>
+    <span class="fw-bold">${x.text}</span>
+    <span class="small text-secondary">${x.date}</span>
+    <p>${x.description}</p>
+    <span class="options">
+      <i onClick = "editTask(this)"  data-bs-toggle="modal" data-bs-target="#form" class="fa-solid fa-pen-to-square"></i>
+      <i onClick = "deleteTask(this);createTasks()" class="fa-solid fa-trash-can"></i> 
+    </span>
+  </div>
+  `);
+  });
 
 
-let createPost = () => {
-posts.innerHTML +=
-`          <div>
-<p>${data.text}</p>
-<span class="options">
-<i onClick = "editPost(this)" class="fa-solid fa-pen-to-square"></i>
-<i onClick= "deletePost(this)" class="fa-solid fa-trash-can"></i>
-</span>
-</div>`
-;
-input.value = "";
+resetForm()
+};
+
+
+let deleteTask = (e) => {
+  e.parentElement.parentElement.remove();
+  data.splice(e.parentElement.parentElement.id, 1);
+  localStorage.setItem("data" , JSON.stringify(data));
+  console.log(data);
+
 }
 
-let deletePost = (e) => {
-  e.parentElement.parentElement.remove()
+
+let editTask = (e) => {
+  let selectedTask = e.parentElement.parentElement;
+  textInput.value = selectedTask.children[0].innerHTML;
+  dateInput.value = selectedTask.children[1].innerHTML;
+  textArea.value =  selectedTask.children[2].innerHTML;
+
+  deleteTask(e);
+
 }
 
-let editPost = (e) => {
-  input.value = e.parentElement.previousElementSibling.innerHTML;
-  e.parentElement.parentElement.remove()
-
-
-}
-
-
+let resetForm = () =>{
+  textInput.value = "";
+  dateInput.value = "";
+  textArea.value =  "";
+};
 
 
 
 
-
-
-
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || []; //this line of code is trying to retireve data from the local storage and putting it back into the 'data' variable. || [] meaning or empty area takes away the error upon reload.
+  console.log(data);
+  createTasks();
+}) ();
 
 
 
