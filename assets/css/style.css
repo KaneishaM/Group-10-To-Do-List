@@ -1,4 +1,4 @@
-feature-toDo
+
 
 *{
   font-family:monospace;
@@ -26,7 +26,7 @@ body{
 }
 
 
- main
+
 
 .heading{
   font-weight: 300;
@@ -121,9 +121,4 @@ border: 4px solid goldenrod;
 }
 
 
-/* Styling delete and complete buttons */
 
-.check-button-background {
-  background-color: lightgreen;
-  color: black;
-}
